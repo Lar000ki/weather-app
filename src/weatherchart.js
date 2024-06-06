@@ -18,7 +18,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const WeatherChart = () => {
     const [weatherData, setWeatherData] = useState([]);
-    const [weatherDescription, setWeatherDescription] = useState('');
+    //const [weatherDescription, setWeatherDescription] = useState('');
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const WeatherChart = () => {
             try {
                 const response = await axios.get('https://api.openweathermap.org/data/2.5/forecast?q=Санкт-Петербург&appid=97c567d891d853bbed22405246ec8ff8&units=metric&lang=ru');
                 setWeatherData(response.data.list);
-                setWeatherDescription(response.data.list[0].weather[0].description);
+                //setWeatherDescription(response.data.list[0].weather[0].description);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching weather data:', error);
